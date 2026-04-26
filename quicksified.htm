@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PhoenixMedia.com</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #0a0f1c;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Cyber Teal Background */
+    .hero-bg {
+      background: radial-gradient(circle at center, #0f1b3a 0%, #0a0f1c 70%);
+      position: relative;
+    }
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(rgba(103, 232, 249, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(103, 232, 249, 0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      opacity: 0.5;
+      z-index: 1;
+      animation: subtleMove 90s infinite linear;
+    }
+    @keyframes subtleMove {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(50px, 35px); }
+    }
+
+    .glow-text {
+      text-shadow: 0 0 40px rgba(103, 232, 249, 0.9),
+                   0 0 90px rgba(139, 92, 246, 0.7);
+    }
+
+    .card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(103, 232, 249, 0.2);
+    }
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 0 45px rgba(103, 232, 249, 0.45);
+      border-color: rgba(103, 232, 249, 0.6);
+    }
+
+    .star {
+      position: absolute;
+      background: #67e8f9;
+      border-radius: 50%;
+      animation: twinkle 4s infinite;
+      box-shadow: 0 0 10px #67e8f9;
+    }
+
+    /* Scroll Animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(80px) scale(0.92);
+      transition: all 1000ms cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    .scroll-reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    .scroll-reveal.delay-1 { transition-delay: 80ms; }
+    .scroll-reveal.delay-2 { transition-delay: 160ms; }
+    .scroll-reveal.delay-3 { transition-delay: 240ms; }
+    .scroll-reveal.delay-4 { transition-delay: 320ms; }
+  </style>
+</head>
+<body class="scroll-smooth">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-lg border-b border-cyan-900">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center text-xs font-bold">Q</div>
+        <span class="text-2xl font-semibold tracking-tight text-cyan-100">Quicksified</span>
+      </div>
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="#why" class="hover:text-cyan-400 transition">Why Us</a>
+        <a href="#portfolio" class="hover:text-cyan-400 transition">Portfolio</a>
+        <a href="#process" class="hover:text-cyan-400 transition">Management</a>
+        <a href="#vouches" class="hover:text-cyan-400 transition">Vouches</a>
+      </div>
+      <div class="flex gap-4">
+        <a href="https://t.me/" target="_blank" class="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-cyan-400/30 rounded-full text-sm flex items-center gap-2 transition">
+          <i class="fab fa-telegram"></i> Telegram
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" class="px-6 py-2.5 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 rounded-full text-sm font-semibold transition">Instagram</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero-bg min-h-screen flex items-center relative">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10 pt-20">
+      <h1 class="text-[5.5rem] md:text-[7rem] font-black tracking-tighter leading-none glow-text mb-4">
+        QUICKSIFIED<br>
+      </h1>
+      <p class="text-xl md:text-2xl text-cyan-200 max-w-2xl mx-auto mb-10">
+        TRUSTED BY THOUSANDS ✦ WE SERVE THE BEST ✦ TOP QUALITY PLUGS PROVIDED.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })" 
+                class="px-10 py-4 bg-cyan-400 text-black font-semibold rounded-2xl flex items-center justify-center gap-3 hover:bg-cyan-300 transition text-lg">
+          <i class="fas fa-paper-plane"></i> Get In Touch
+        </button>
+        <a href="https://wa.me/15485805487" target="_blank" 
+           class="px-10 py-4 border border-cyan-400/50 hover:border-cyan-400 rounded-2xl flex items-center justify-center gap-3 transition text-lg">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+
+      <div class="mt-16 text-sm text-cyan-400">
+        Premium Quality ✦ 200+ projects ✦ 5★ Rated
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why" class="py-24 bg-[#0a0f1c]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 scroll-reveal">
+        <div class="inline-block px-6 py-2 bg-cyan-950/50 rounded-full text-cyan-400 text-sm font-medium">WHY US</div>
+        <h2 class="text-5xl font-bold mt-4 text-white">Why Clients Choose Us</h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="card p-8 rounded-3xl text-center scroll-reveal delay-1"> 
+          <div class="text-5xl mb-4">✅</div>
+          <h3 class="text-3xl font-bold mb-1">1k+ Clients</h3>
+          <p class="text-cyan-300">Trusted by Many worldwide</p>
+        </div>
+        <div class="card p-8 rounded-3xl text-center scroll-reveal delay-2">
+          <div class="text-5xl mb-4">⚡</div>
+          <h3 class="text-3xl font-bold mb-1">3+ Years</h3>
+          <p class="text-cyan-300">Professional service</p>
+        </div>
+        <div class="card p-8 rounded-3xl text-center scroll-reveal delay-3">
+          <div class="text-5xl mb-4">🚀</div>
+          <h3 class="text-3xl font-bold mb-1">Fast Delivery</h3>
+          <p class="text-cyan-300">Before expected time</p>
+        </div>
+        <div class="card p-8 rounded-3xl text-center scroll-reveal delay-4">
+          <div class="text-5xl mb-4">🛎️</div>
+          <h3 class="text-3xl font-bold mb-1">24/7 Available</h3>
+          <p class="text-cyan-300">Always active for you</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="py-24 bg-[#0a0f1c]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-12 scroll-reveal">
+        <div class="inline-block px-6 py-2 bg-cyan-950/50 rounded-full text-cyan-400 text-sm font-medium">PORTFOLIO</div>
+        <h2 class="text-5xl font-bold mt-4">OUR WORKS</h2>
+        <p class="text-cyan-300 mt-3">A snapshot of the visuals we craft for brands that aim to stand apart.</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] scroll-reveal" onclick="window.open('https://t.me/', '_blank')">
+          <img src="images/project1.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Project 1">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6">
+            <div>
+              <div class="text-cyan-400 text-sm">NOSTROUS • Social Lookups</div>
+              <div class="font-semibold text-xl">Instagram & Telegram Tools</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeat similar for other 5 cards (I kept them short for space) -->
+        <div class="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] scroll-reveal delay-1" onclick="window.open('https://t.me/', '_blank')">
+          <img src="images/project2.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Project 2">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6">
+            <div>
+              <div class="text-cyan-400 text-sm">Instagram Verifications</div>
+              <div class="font-semibold text-xl">Premium GFX Package</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] scroll-reveal delay-2" onclick="window.open('https://t.me/', '_blank')">
+          <img src="images/project3.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Project 3">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6">
+            <div>
+              <div class="text-cyan-400 text-sm">Account Recovery Designs</div>
+              <div class="font-semibold text-xl">Telegram Graphics</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] scroll-reveal delay-3" onclick="window.open('https://t.me/', '_blank')">
+          <img src="images/project4.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Project 4">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6">
+            <div>
+              <div class="text-cyan-400 text-sm">Telegram Stickers</div>
+              <div class="font-semibold text-xl">Animated Sticker Pack</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] scroll-reveal delay-4" onclick="window.open('https://t.me/', '_blank')">
+          <img src="images/project5.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Project 5">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6">
+            <div>
+              <div class="text-cyan-400 text-sm">YouTube Thumbnails</div>
+              <div class="font-semibold text-xl">Gaming Thumbnail Pack</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="group relative rounded-3xl overflow-hidden cursor-pointer aspect-[4/3] scroll-reveal" onclick="window.open('https://t.me/', '_blank')">
+          <img src="images/project6.jpg" class="w-full h-full object-cover transition-transform group-hover:scale-110" alt="Project 6">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent flex items-end p-6">
+            <div>
+              <div class="text-cyan-400 text-sm">Logo & Branding</div>
+              <div class="font-semibold text-xl">Channel Logo Design</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section id="process" class="py-24 bg-[#0a0f1c]">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <div class="inline-block px-6 py-2 bg-cyan-950/50 rounded-full text-cyan-400 text-sm font-medium scroll-reveal">MANAGEMENT</div>
+      <h2 class="text-5xl font-bold mt-6 mb-16 scroll-reveal">Working Way</h2>
+
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="card p-8 rounded-3xl border border-cyan-400/10 scroll-reveal delay-1">
+          <div class="w-12 h-12 bg-cyan-500 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 mx-auto">01</div>
+          <h3 class="text-2xl font-semibold mb-3">Share Your Thoughts</h3>
+          <p class="text-cyan-300">Share your requirements with us.</p>
+        </div>
+        <div class="card p-8 rounded-3xl border border-cyan-400/10 scroll-reveal delay-2">
+          <div class="w-12 h-12 bg-cyan-500 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 mx-auto">02</div>
+          <h3 class="text-2xl font-semibold mb-3">We Craft</h3>
+          <p class="text-cyan-300">We turn your ideas into reality.</p>
+        </div>
+        <div class="card p-8 rounded-3xl border border-cyan-400/10 scroll-reveal delay-3">
+          <div class="w-12 h-12 bg-cyan-500 rounded-2xl flex items-center justify-center text-2xl font-bold mb-6 mx-auto">03</div>
+          <h3 class="text-2xl font-semibold mb-3">You Stand Out</h3>
+          <p class="text-cyan-300">Get premium ready-to-use visuals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vouches & Stats -->
+  <section id="vouches" class="py-24 bg-[#0a0f1c]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16 scroll-reveal">
+        <div class="inline-block px-6 py-2 bg-cyan-950/50 rounded-full text-cyan-400 text-sm font-medium">CLIENT VOUCHES</div>
+        <h2 class="text-5xl font-bold mt-4">Real Clients. Real Results.</h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card p-8 rounded-3xl scroll-reveal delay-1">
+          <p class="text-lg italic">"Best Telegram graphics designer I've ever worked with. Super professional."</p>
+          <div class="mt-6 text-cyan-400">@neontrader</div>
+        </div>
+        <div class="card p-8 rounded-3xl scroll-reveal delay-2">
+          <p class="text-lg italic">"Insane quality, quick turnaround. Will definitely come back."</p>
+          <div class="mt-6 text-cyan-400">@alphawave</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="py-32 bg-gradient-to-b from-[#0a0f1c] to-[#0f1b3a]">
+    <div class="max-w-3xl mx-auto px-6 text-center scroll-reveal">
+      <h2 class="text-6xl font-bold leading-tight mb-6">Ready To Work With Us?</h2>
+      <p class="text-2xl text-cyan-300 mb-12">Get Your Brand Shine!</p>
+      
+      <a href="https://t.me/" target="_blank"
+         class="inline-flex items-center gap-4 px-12 py-6 bg-cyan-400 text-black text-2xl font-semibold rounded-3xl hover:scale-105 transition">
+        <i class="fab fa-telegram-plane"></i> Contact Us
+      </a>
+    </div>
+  </section>
+
+  <footer class="py-12 text-center text-xs text-cyan-500 border-t border-cyan-900">
+    © PhoenixMedia • Premium Graphics & Services
+  </footer>
+
+  <script>
+    // Twinkling Stars
+    function createStar() {
+      const star = document.createElement('div');
+      star.className = 'star';
+      const size = Math.random() * 3 + 1;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      star.style.left = `${Math.random() * 100}vw`;
+      star.style.top = `${Math.random() * 100}vh`;
+      star.style.animationDelay = `-${Math.random() * 4}s`;
+      document.body.appendChild(star);
+      setTimeout(() => star.remove(), 20000);
+    }
+    setInterval(createStar, 120);
+
+    // Repeatable Scroll Animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        } else {
+          entry.target.classList.remove('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
